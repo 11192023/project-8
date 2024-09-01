@@ -15,4 +15,8 @@ html{
         --Secondary-Color-Background:#EEEEEE;
         --br-separate:black;
     }
+    // dropdown
+    --background-dropdown: #FFF;
+    --color-box-shadow:rgba(200, 200, 200, 0.40);
+    --color-arrow-top:filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
