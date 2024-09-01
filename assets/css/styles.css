@@ -56,11 +56,6 @@ table {
   box-sizing: border-box;
 }
 
-:root {
-  --text-color:#1A162E;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2698%) hue-rotate(212deg) brightness(94%) contrast(95%);
-}
-
 html {
   font-size: 62.5%;
 }
@@ -1122,13 +1117,35 @@ button, input, textarea, select {
     --gutter-y:90px;
   }
 }
+html {
+  --text-color:#1A162E;
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2698%) hue-rotate(212deg) brightness(94%) contrast(95%);
+  --header-br-color:#EEEEEE;
+  --Secondary-Color-Secondary-1:#1A162E;
+  --Secondary-Color-Background:#fff;
+  --box-shadow-avatar:0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  --br-separate:#EDEDF6;
+  --box-shadow-group:0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+}
+
+html.dark {
+  --text-color:#FFFFFF;
+  --icon-color:brightness(0) saturate(100%) invert(99%) sepia(3%) saturate(98%) hue-rotate(40deg) brightness(113%) contrast(100%);
+  --header-br-color:#171C28;
+  --Secondary-Color-Secondary-1:#fff;
+  --Secondary-Color-Background:#292E39;
+  --box-shadow-avatar:0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  --br-separate:#EDEDF6;
+  --box-shadow-group:0px 20px 60px 10px rgba(0, 0, 0, 0.20);
+}
+
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .nav-top {
   display: flex;
   align-items: center;
 }
 
 .header {
-  background-color: #EEEEEE;
+  background-color: var(--header-br-color);
   padding: 30px 0;
 }
 
@@ -1155,7 +1172,7 @@ button, input, textarea, select {
   justify-content: center;
   border-radius: 8px;
   background: var(--Secondary-Color-Background, #fff);
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  box-shadow: var(--box-shadow-group);
   padding: 13px;
   margin-right: 20px;
   gap: 20px;
@@ -1164,15 +1181,17 @@ button, input, textarea, select {
   gap: 10px;
   cursor: pointer;
 }
+.top-act__btn--extra {
+  padding: 6px;
+}
 .top-act__avatar {
   width: 50px;
   height: 50px;
   border-radius: 8px;
-  box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-avatar);
   cursor: pointer;
 }
 .top-act__title {
-  color: var(--Secondary-Color-Secondary-1, #1A162E);
   /* Medium 15 */
   font-size: 1.5rem;
   font-weight: 700;
@@ -1181,7 +1200,7 @@ button, input, textarea, select {
 .top-act__separate {
   width: 1px;
   height: 30px;
-  background: var(--Secondary-Color-Secondary-4, #EDEDF6);
+  background: var(--br-separate, #EDEDF6);
 }
 
 .logo {

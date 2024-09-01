@@ -3,7 +3,7 @@
     align-items: center;
 }
 .header{
-    background-color: #EEEEEE;
+    background-color: var(--header-br-color);
     padding:30px 0;
 }
 .nav-top{
@@ -35,7 +35,7 @@
         justify-content: center;
         border-radius: 8px;
         background: var(--Secondary-Color-Background, #fff);
-        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+        box-shadow: var(--box-shadow-group);
         padding:13px;
         margin-right:20px;
         gap:20px;
@@ -45,15 +45,18 @@
         gap:10px;
         cursor: pointer;
     }
+    &__btn--extra{
+        padding:6px;
+    }
     &__avatar{
         width:50px;
         height:50px;
         border-radius: 8px;
-        box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        box-shadow: var(--box-shadow-avatar);
         cursor: pointer;
     }
     &__title{
-        color: var(--Secondary-Color-Secondary-1, #1A162E);
+        // color: var(--Secondary-Color-Secondary-1, #1A162E);
         /* Medium 15 */
         font-size: 1.5rem;
         font-weight: 700;
@@ -62,6 +65,6 @@
     &__separate{
         width: 1px;
         height: 30px;
-        background: var(--Secondary-Color-Secondary-4, #EDEDF6);
+        background: var(--br-separate, #EDEDF6);
     }
 }
