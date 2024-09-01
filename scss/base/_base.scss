@@ -1,13 +1,19 @@
 *, ::before, ::after{
     box-sizing: border-box;
 }
+:root{
+    --text-color:#1A162E;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2698%) hue-rotate(212deg) brightness(94%) contrast(95%);
+}
 html{
     font-size:62.5%;
 }
 body{
+    color:var(--text-color);
     font-size:1.6rem;
     font-family: 'Gordita', sans-serif;
 }
+
 a{
     color:inherit;
     text-decoration: none;
@@ -16,4 +22,12 @@ button{
     outline: none;
     border: none;
     background-color:transparent;
+}
+button,input,textarea,select{
+    font-family: inherit;
+    color:inherit;
+}
+
+.icon {
+    filter: var(--icon-color);
 }

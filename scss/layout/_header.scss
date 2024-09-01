@@ -1,10 +1,13 @@
+%flexItemsCenter{
+    display:flex;
+    align-items: center;
+}
 .header{
     background-color: #EEEEEE;
     padding:30px 0;
 }
 .nav-top{
-    display:flex;
-    align-items: center;
+    @extend %flexItemsCenter;
 }
 .navbar{
     margin-left:144px;
@@ -14,20 +17,21 @@
         gap:30px;
     }
     &__link{
-        display: flex;
-        align-items: center;
+         @extend %flexItemsCenter;
         gap:6px;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.46; /* 146.667% */
     }
     &__arrow{
         margin-top:3px;
     }
 }
 .top-act{
-    display:flex;
-    align-items: center;
+     @extend %flexItemsCenter;
     &__group{
-        display:flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         justify-content: center;
         border-radius: 8px;
         background: var(--Secondary-Color-Background, #fff);
@@ -37,15 +41,16 @@
         gap:20px;
     }
     &__btn{
-        display:flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         gap:10px;
+        cursor: pointer;
     }
     &__avatar{
         width:50px;
         height:50px;
         border-radius: 8px;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
     }
     &__title{
         color: var(--Secondary-Color-Secondary-1, #1A162E);

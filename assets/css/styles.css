@@ -56,11 +56,17 @@ table {
   box-sizing: border-box;
 }
 
+:root {
+  --text-color:#1A162E;
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2698%) hue-rotate(212deg) brightness(94%) contrast(95%);
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
+  color: var(--text-color);
   font-size: 1.6rem;
   font-family: "Gordita", sans-serif;
 }
@@ -74,6 +80,15 @@ button {
   outline: none;
   border: none;
   background-color: transparent;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.icon {
+  filter: var(--icon-color);
 }
 
 .row > *, .container-fluid, .container {
@@ -1107,14 +1122,14 @@ button {
     --gutter-y:90px;
   }
 }
+.top-act__btn, .top-act__group, .top-act, .navbar__link, .nav-top {
+  display: flex;
+  align-items: center;
+}
+
 .header {
   background-color: #EEEEEE;
   padding: 30px 0;
-}
-
-.nav-top {
-  display: flex;
-  align-items: center;
 }
 
 .navbar {
@@ -1126,21 +1141,17 @@ button {
   gap: 30px;
 }
 .navbar__link {
-  display: flex;
-  align-items: center;
   gap: 6px;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.46; /* 146.667% */
 }
 .navbar__arrow {
   margin-top: 3px;
 }
 
-.top-act {
-  display: flex;
-  align-items: center;
-}
 .top-act__group {
-  display: flex;
-  align-items: center;
   justify-content: center;
   border-radius: 8px;
   background: var(--Secondary-Color-Background, #fff);
@@ -1150,15 +1161,15 @@ button {
   gap: 20px;
 }
 .top-act__btn {
-  display: flex;
-  align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .top-act__avatar {
   width: 50px;
   height: 50px;
   border-radius: 8px;
   box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 .top-act__title {
   color: var(--Secondary-Color-Secondary-1, #1A162E);
