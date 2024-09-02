@@ -59,10 +59,11 @@
         &:last-child .menu-top__link{
             padding-bottom: 0;
         }
+        &--active > .menu-top__link,
         &:hover > .menu-top__link{
             color: var(--Blue-Blue-hover, #0071DC);
         }
-        &:hover .sub-menu{
+        &--active .sub-menu{
             display: grid;
         }
     }

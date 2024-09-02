@@ -1389,10 +1389,10 @@ html.dark {
 .menu-top__item:last-child .menu-top__link {
   padding-bottom: 0;
 }
-.menu-top__item:hover > .menu-top__link {
+.menu-top__item--active > .menu-top__link, .menu-top__item:hover > .menu-top__link {
   color: var(--Blue-Blue-hover, #0071DC);
 }
-.menu-top__item:hover .sub-menu {
+.menu-top__item--active .sub-menu {
   display: grid;
 }
 
