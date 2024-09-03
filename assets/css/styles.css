@@ -78,9 +78,10 @@ button {
   background-color: transparent;
 }
 
-button, input, textarea, select {
+button, input, textarea, select, a, img {
   font-family: inherit;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .icon {
@@ -1233,17 +1234,65 @@ html.dark {
 }
 @media (max-width: 991.98px) {
   .navbar__list {
-    display: none;
+    display: flex;
+    position: fixed;
+    inset: 0 50% 0 0;
+    background-color: var(--Secondary-Color-Background);
+    flex-direction: column;
+    z-index: 9;
+    translate: -100%;
+    transition: translate 0.5s;
+  }
+  .navbar__list.show {
+    translate: 0%;
+  }
+  .navbar__list.show + .navbar__overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.navbar__close--btn {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .navbar__close--btn {
+    display: inherit;
+    padding: 20px 40px;
+    filter: var(--icon-color);
+  }
+}
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility opacity;
+  transition-duration: 0.5s;
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background: rgba(0, 0, 0, 0.4);
   }
 }
 .navbar__item:hover .drop-down {
   display: block;
+}
+@media (max-width: 991.98px) {
+  .navbar__item:hover .drop-down {
+    display: none;
+  }
 }
 .navbar__item:first-child a {
   padding-left: 0px;
 }
 .navbar__item:last-child a {
   padding-right: 0px;
+}
+@media (max-width: 991.98px) {
+  .navbar__item {
+    padding: 0 40px;
+  }
 }
 .navbar__link {
   gap: 6px;
@@ -1253,6 +1302,12 @@ html.dark {
   font-weight: 500;
   line-height: 1.46; /* 146.667% */
   padding: 0 15px;
+}
+@media (max-width: 991.98px) {
+  .navbar__link {
+    padding: 0;
+    justify-content: space-between;
+  }
 }
 .navbar__arrow {
   margin-top: 3px;
@@ -1430,6 +1485,13 @@ html.dark {
   display: none;
   grid-template-columns: repeat(3, 1fr);
   overflow-y: auto;
+}
+.sub-menu__notmain {
+  display: grid;
+  position: inherit;
+  inset: inherit;
+  grid-template-columns: repeat(4, 1fr);
+  max-height: calc(min(582px, 100vh - 150px) - var(--inner-padding) * 2);
 }
 
 /*# sourceMappingURL=styles.css.map */

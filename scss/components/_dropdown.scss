@@ -104,4 +104,11 @@
     display: none;
     grid-template-columns: repeat(3,1fr);
      overflow-y: auto;
+     &__notmain{
+        display:grid;
+        position:inherit;
+        inset:inherit;
+        grid-template-columns: repeat(4,1fr);
+        max-height:calc(min(582px, 100vh - 150px) - var(--inner-padding) * 2);
+     }
 }
