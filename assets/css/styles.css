@@ -1588,6 +1588,7 @@ html.dark {
   .sub-menu {
     position: initial;
     grid-template-columns: 1fr;
+    padding-left: 0;
   }
 }
 .sub-menu__notmain {
@@ -1596,6 +1597,14 @@ html.dark {
   inset: inherit;
   grid-template-columns: repeat(4, 1fr);
   max-height: calc(min(582px, 100vh - 150px) - var(--inner-padding) * 2);
+}
+@media (max-width: 991.98px) {
+  .sub-menu__notmain {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    height: auto;
+    max-height: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

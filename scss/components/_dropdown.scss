@@ -131,6 +131,8 @@
      @include abstracts.breakpoint(lg){
         position:initial;
         grid-template-columns: 1fr;
+        padding-left: 0;
+        
      }
      &__notmain{
         display:grid;
@@ -138,5 +140,11 @@
         inset:inherit;
         grid-template-columns: repeat(4,1fr);
         max-height:calc(min(582px, 100vh - 150px) - var(--inner-padding) * 2);
+        @include abstracts.breakpoint(lg){
+            grid-template-columns:1fr;
+            padding-left:0;
+            height:auto;
+            max-height:none;
+        }
      }
 }
