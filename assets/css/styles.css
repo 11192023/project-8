@@ -1363,6 +1363,15 @@ html.dark {
   .navbar__item {
     padding: 0 40px;
   }
+  .navbar__item:hover .drop-down {
+    display: none;
+  }
+  .navbar__item--active .drop-down {
+    display: block !important;
+  }
+  .navbar__item--active .navbar__arrow {
+    rotate: 0deg;
+  }
 }
 .navbar__link {
   gap: 6px;
@@ -1381,6 +1390,12 @@ html.dark {
 }
 .navbar__arrow {
   margin-top: 3px;
+}
+@media (max-width: 991.98px) {
+  .navbar__arrow {
+    rotate: -90deg;
+    transition: rotate 0.3s;
+  }
 }
 
 .top-act__group {
@@ -1461,7 +1476,6 @@ html.dark {
 @media (max-width: 991.98px) {
   .drop-down {
     position: initial;
-    display: block;
     padding-top: 0;
   }
 }

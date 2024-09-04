@@ -109,7 +109,21 @@
         }
         @include abstracts.breakpoint(lg){
             padding:0 40px;
+            &:hover .drop-down{
+                display: none;
+            }
+            &--active .drop-down{
+                display:block !important;
+            }
+            &--active .navbar__arrow{
+                rotate: 0deg;
+            }
         }
+        // @include abstracts.breakpoint(lg){
+        //     &--active{
+        //         display:block;
+        //     }
+        // }
     }
     &__link{
          @extend %flexItemsCenter;
@@ -128,6 +142,10 @@
     }
     &__arrow{
         margin-top:3px;
+        @include abstracts.breakpoint(lg){
+            rotate: -90deg;
+            transition: rotate 0.3s;
+        }
     }
 }
 .top-act{
