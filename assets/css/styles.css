@@ -1206,6 +1206,7 @@ html {
   --Secondary-Color-Secondary-1:#1A162E;
   --filter-case-2: brightness(0) saturate(100%) invert(4%) sepia(62%) saturate(4840%) hue-rotate(245deg) brightness(91%) contrast(88%);
   --Blue-Blue-hover:#0071DC;
+  --color-navbar-dis: #efeded;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1233,6 +1234,7 @@ html.dark {
   --Secondary-Color-Secondary-1:#B9BABE;
   --filter-case-2:brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1619%) hue-rotate(237deg) brightness(97%) contrast(103%);
   --Blue-Blue-hover:#0071DC;
+  --color-navbar-dis:#292e39 ;
 }
 
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .nav-top {
@@ -1284,6 +1286,11 @@ html.dark {
     margin-right: 0px;
   }
 }
+@media (max-width: 575.98px) {
+  .nav-top__btn .icon {
+    margin-right: 10px;
+  }
+}
 
 .navbar {
   margin-left: 144px;
@@ -1292,11 +1299,6 @@ html.dark {
 @media (max-width: 1199.98px) {
   .navbar {
     margin-left: 50px;
-  }
-}
-@media (max-width: 575.98px) {
-  .navbar {
-    display: none;
   }
 }
 .navbar__list {
@@ -1331,9 +1333,51 @@ html.dark {
     display: inherit;
     padding: 20px 40px;
     filter: var(--icon-color);
+  }
+}
+.navbar-dis {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .navbar-dis {
+    display: block;
     position: sticky;
     top: 0;
     z-index: 999;
+    background-color: var(--color-navbar-dis);
+  }
+  .navbar-dis .nav-btn {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar-dis {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--color-navbar-dis);
+  }
+}
+.navbar-dis .nav-btn {
+  display: none;
+}
+@media (max-width: 575.98px) {
+  .navbar-dis .nav-btn {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-dis .nav-btn__icon {
+    filter: var(--icon-color);
+  }
+  .navbar-dis .nav-btn__title {
+    margin-left: 16px;
+  }
+  .navbar-dis .nav-btn__qtn {
+    margin-left: auto;
   }
 }
 .navbar__overlay {
