@@ -31,25 +31,64 @@
         </script>
     <div class="container">
         <!-- slideshow -->
-         <div class="slideshow">
-            <div class="slideshow__inner">
+         <section class="home__container">
+             <div class="slideshow">
+                <div class="slideshow__inner">
+                    <!-- item 1 -->
+                    <div class="slideshow__item">
+                        <a href="#!" class="slideshow__link">
+                            <picture>
+                                <source media="(max-width:575.98px)" srcset="./assets/img/slideshow main/slideshow-mobile.svg" />
+                                <img src="./assets/img/slideshow main/slideshow-destop.svg" alt="slideshow-main" class="slideshow__img">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="slideshow__nav">
+                        <span class="slideshow__nav--number">1</span>
+                        <span class="slideshow__nav--line"></span>
+                        <span class="slideshow__nav--number">5</span>
+                    </div> -->
+                
+             </div>
+         </section>
+         <!-- browser category -->
+          <section class="home__container">
+            <h2 class="home__heading">Browse Categories</h2>
+            <div class="home__cate row row-cols-3 row-cols-md-1">
                 <!-- item 1 -->
-                <div class="slideshow__item">
-                    <a href="#!" class="slideshow__link">
-                        <picture>
-                            <source media="(max-width:575.98px)" srcset="./assets/img/slideshow main/slideshow-mobile.svg" />
-                            <img src="./assets/img/slideshow main/slideshow-destop.svg" alt="slideshow-main" class="slideshow__img">
-                        </picture>
-                    </a>
+                <div class="col">
+                    <article class="cate-item">
+                        <img src="./assets/img/category-item/item-1.svg" alt="item 1" class="cate-item__thumb">
+                        <section class="cate-item__infor">
+                            <h3 class="cate-item__title">$24 - $150</h3>
+                            <p class="cate-item__desc">New sumatra mandeling coffe blend</p>
+                        </section>
+                    </article>
+                </div>
+                <!-- item 2 -->
+                 <div class="col">
+                    <article class="cate-item">
+                        <img src="./assets/img/category-item/item-2.svg" alt="item 2" class="cate-item__thumb">
+                        <section class="cate-item__infor">
+                            <h3 class="cate-item__title">$37 - $160</h3>
+                            <p class="cate-item__desc">Espresso arabica and robusta beans</p>
+                        </section>
+                    </article>
+                </div>
+                <!-- item 3 -->
+                 <div class="col">
+                    <article class="cate-item">
+                        <img src="./assets/img/category-item/item-3.svg" alt="item-3" class="cate-item__thumb">
+                        <section class="cate-item__infor">
+                            <h3 class="cate-item__title">$32 - $160</h3>
+                            <p class="cate-item__desc">Lavazza top class whole bean coffee blend</p>
+                        </section>
+                    </article>
                 </div>
             </div>
-            <!-- <div class="slideshow__nav">
-                    <span class="slideshow__nav--number">1</span>
-                    <span class="slideshow__nav--line"></span>
-                    <span class="slideshow__nav--number">5</span>
-                </div> -->
-            
-         </div>
+
+          </section>
          <!-- footer -->
         <footer id="footer"></footer>
         <script>
