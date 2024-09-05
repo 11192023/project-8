@@ -1,19 +1,18 @@
 @use "sass:math";
 // breakpoints, dimension, container, row, column, v.v
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+    xxl: 1400px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px
 );
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1370px
+  sm: 100%,
+  md: 540px,
+  lg: 720px,
+  xl: 960px,
+  xxl: 1140px,
 );
 $gutters: (
   0: 0,
@@ -39,6 +38,7 @@ $grid-gutter-width:30px !default;
 }
 .container{
     @extend .container-fluid;
+    width:1370px;
 }
 .row{
     display:flex;
@@ -54,17 +54,12 @@ $grid-gutter-width:30px !default;
 .col{
     flex:1 0;
 }
-@mixin make-media-query($dimension,$bypass:false){
-    @if $bypass{
+@mixin make-media-query($dimension){
+    @media( max-width:($dimension - 0.02)){
         @content;
-    }
-    @else{
-         @media( min-width:$dimension){
-        @content;
-    }
     }
 }
-@mixin make-row-columns($infic){
+@mixin make-row-columns($infic:null){
     @for $i from 1 through $grid-column * 0.5{
             .row-cols#{$infic}-#{$i} > * {
                 flex: 0 0 auto;
@@ -72,21 +67,21 @@ $grid-gutter-width:30px !default;
             }
         }
 }
-@mixin make_column($infic){
+@mixin make_column($infic:null){
     @for $i from 1 through $grid-column{
         .col#{$infic}-#{$i}{
             flex: 0 0 auto;
             width:math.div(100%,$grid-column) * $i;        }
     }
 }
-@mixin make_offset($infic){
+@mixin make_offset($infic:null){
     @for $i from 0 to $grid-column{
         .offset#{$infic}-#{$i}{
             margin-left:if($i>0,math.div(100%,$grid-column)*$i,0);
         }
     }
 }
-@mixin make_gutter($infic){
+@mixin make_gutter($infic:null){
     @each $i, $ratio in $gutters{
         .g#{$infic}-#{$i},
         .g-x#{$infic}-#{$i}{
@@ -98,11 +93,14 @@ $grid-gutter-width:30px !default;
         }
     }
 }
+@include make-row-columns();
+@include make_column();
+@include make_offset();
+@include make_gutter();
 @each $breakpoint , $dimension in $grid-breakpoints{
     $max-width:map-get($container-max-widths,$breakpoint);
-    $infic:if($breakpoint == xs,"","-#{$breakpoint}");
-    $is_xs:$breakpoint == xs;
-    @include make-media-query($dimension,$is_xs){
+    $infic:"-#{$breakpoint}";
+    @include make-media-query($dimension){
         .container{
             max-width:$max-width;
         }

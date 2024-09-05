@@ -30,6 +30,27 @@
             load("#header","./templates/header.html");
         </script>
     <div class="container">
+        <!-- slideshow -->
+         <div class="slideshow">
+            <div class="slideshow__inner">
+                <!-- item 1 -->
+                <div class="slideshow__item">
+                    <a href="#!" class="slideshow__link">
+                        <picture>
+                            <source media="(max-width:575.98px)" srcset="./assets/img/slideshow main/slideshow-mobile.svg" />
+                            <img src="./assets/img/slideshow main/slideshow-destop.svg" alt="slideshow-main" class="slideshow__img">
+                        </picture>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="slideshow__nav">
+                    <span class="slideshow__nav--number">1</span>
+                    <span class="slideshow__nav--line"></span>
+                    <span class="slideshow__nav--number">5</span>
+                </div> -->
+            
+         </div>
+         <!-- footer -->
         <footer id="footer"></footer>
         <script>
             load("#footer","./templates/footer.html");
