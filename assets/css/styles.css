@@ -1246,6 +1246,7 @@ html.dark {
   --br-product-card:#171C28;
   --color-box-shadow-pro-card:0px 20px 60px 10px rgba(0, 0, 0, 0.20);
   --color-slider:#D2D1D6;
+  --color-tag:#171C28;
 }
 
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .nav-top {
@@ -1917,16 +1918,25 @@ html.dark {
 }
 .filter__heading {
   font-size: 2.2rem;
+  padding-bottom: 30px;
+  font-weight: 500;
   line-height: 32px; /* 145.455% */
+}
+.filter__row {
+  display: flex;
+}
+.filter__separate {
+  width: 2px;
+  background-color: #EEEEEE;
+  margin: 0 30px;
 }
 
 .filter__form-label {
   display: block;
-  margin-top: 30px;
-  margin-bottom: 20px;
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 32px; /* 145.455% */
+  padding-bottom: 10px;
 }
 .filter__form-label--small {
   display: block;
@@ -1940,6 +1950,7 @@ html.dark {
   width: 100%;
   height: 2px;
   background-color: var(--color-slider);
+  margin-top: 15px;
 }
 .filter__form-slider::before, .filter__form-slider::after {
   content: "";
@@ -1959,6 +1970,9 @@ html.dark {
 .filter__form-slider::after {
   left: var(--max-value);
 }
+.filter__form-group {
+  padding-top: 20px;
+}
 .filter__form-group--inline {
   display: flex;
   gap: 30px;
@@ -1968,6 +1982,42 @@ html.dark {
   border-radius: 6px;
   background-color: transparent;
   padding: 12px;
+}
+.filter__form-selector-wrap {
+  display: flex;
+  border: solid 1px #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+.filter__form-selector {
+  display: flex;
+  align-items: center;
+  border-right: solid 1px #fff;
+  padding-right: 14px;
+  gap: 65px;
+}
+.filter__form-selector + .filter__form-selector {
+  border-right: 0;
+  padding-left: 14px;
+  padding-right: 0;
+  gap: 17px;
+}
+.filter__form-tags {
+  display: flex;
+  gap: 20px;
+}
+.filter__form-tag {
+  padding: 6px 12px;
+  background-color: var(--color-tag);
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  transition: opacity 0.2;
+}
+.filter__form-tag:hover {
+  opacity: 0.4;
 }
 
 .home__container {
