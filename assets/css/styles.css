@@ -1855,11 +1855,49 @@ html.dark {
   display: none;
 }
 
+.btn {
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 6px;
+  background: #292E39;
+  font-size: 1.8rem;
+  font-weight: 500;
+  user-select: none;
+}
+.btn + .btn {
+  margin-left: 30px;
+}
+.btn--text {
+  color: #9E9DA8;
+  background-color: transparent;
+  font-weight: 400;
+}
+.btn--primary {
+  background-color: #ffb700;
+  color: #1A162E;
+}
+.btn--outline {
+  background: transparent;
+  border: solid 1px #fff;
+}
+.btn[disabled], .btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn--rounded {
+  border-radius: 99px;
+  border: solid 1px #fff;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
 .product-card {
   padding: 16px;
   border-radius: 20px;
   background-color: var(--br-product-card);
   box-shadow: var(--color-box-shadow-pro-card);
+  height: 100%;
 }
 .product-card__img-wrap {
   padding-top: 100%;
@@ -1914,10 +1952,18 @@ html.dark {
 .filter {
   margin-top: 10px;
   position: absolute;
+  right: 0;
+  top: 50px;
   background: var(--Secondary-Color-Background);
   z-index: 5;
   border-radius: 20px;
   padding: 30px;
+}
+.filter__arrow-top {
+  position: absolute;
+  top: -10px;
+  right: 26px;
+  filter: var(--color-arrow-top);
 }
 .filter__heading {
   font-size: 2.2rem;
@@ -1932,6 +1978,20 @@ html.dark {
   width: 2px;
   background-color: #EEEEEE;
   margin: 0 30px;
+}
+.filter__footer {
+  display: flex;
+  margin-top: 32px;
+  justify-content: flex-end;
+}
+.filter__cancel, .filter__search {
+  height: 38px;
+}
+.filter__cancel {
+  font-size: 1.5rem;
+}
+.filter__search {
+  font-size: 1.4rem;
 }
 
 .filter__form-label {

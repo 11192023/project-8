@@ -32,5 +32,42 @@
         &:not(.liked-btn) .like-btn__icon--liked{
             display:none;
         }
-
 }
+ .btn{
+    height:46px;
+    padding:0 20px;
+    border-radius: 6px;
+    background:#292E39;
+    font-size:1.8rem;
+    font-weight:500;
+    user-select: none;
+    + .btn{
+        margin-left:30px;
+    }
+    &--text{
+        color:#9E9DA8;
+        background-color: transparent;
+        font-weight:400;
+    }
+    &--primary{
+        background-color: #ffb700;
+        color:#1A162E;
+    }
+    &--outline{
+        background: transparent;
+        border: solid 1px #fff;
+    }
+    &[disabled],
+    &--disabled{
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    &--rounded{
+        border-radius: 99px;
+        border: solid 1px #fff;
+    }
+    &:hover{
+        opacity:0.9;
+    }
+    
+ }
