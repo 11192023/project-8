@@ -12,6 +12,9 @@
         font-weight: 700;
         line-height: 1.41; /* 141.667% */
         padding-bottom: 20px;
+        &.fix-padding{
+        padding-bottom: 0;
+    }
     }
     &__cate{
         --gutter-x:51px;
@@ -21,5 +24,11 @@
         @include abstracts.screen(md){
             --gutter-y:10px;
         }
+    }
+    &__row{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom:20px;
     }
 }
