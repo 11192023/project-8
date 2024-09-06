@@ -77,6 +77,10 @@
         border-radius: 6px;
         background-color: transparent;
         padding:12px;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 142.857% */
     }
     &-selector-wrap{
         display:flex;
@@ -114,6 +118,16 @@
         &:hover{
             opacity:0.4;
         }
+    }
+    &-input-text{
+        display:flex;
+        align-items: center;
+        border:solid 1px var(--color-border);
+        padding-right:10px;
+    }
+    &-input--mod{
+        border: none;
+        width:100%;
     }
 
 

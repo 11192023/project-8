@@ -82,6 +82,8 @@ button, input, textarea, select, a, img {
   font-family: inherit;
   color: inherit;
   -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .icon {
@@ -1247,6 +1249,7 @@ html.dark {
   --color-box-shadow-pro-card:0px 20px 60px 10px rgba(0, 0, 0, 0.20);
   --color-slider:#D2D1D6;
   --color-tag:#171C28;
+  --color-border:#fff ;
 }
 
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .nav-top {
@@ -1982,6 +1985,10 @@ html.dark {
   border-radius: 6px;
   background-color: transparent;
   padding: 12px;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
 }
 .filter__form-selector-wrap {
   display: flex;
@@ -2018,6 +2025,16 @@ html.dark {
 }
 .filter__form-tag:hover {
   opacity: 0.4;
+}
+.filter__form-input-text {
+  display: flex;
+  align-items: center;
+  border: solid 1px var(--color-border);
+  padding-right: 10px;
+}
+.filter__form-input--mod {
+  border: none;
+  width: 100%;
 }
 
 .home__container {
