@@ -41,6 +41,7 @@
     font-size:1.8rem;
     font-weight:500;
     user-select: none;
+    white-space: nowrap;
     + .btn{
         margin-left:30px;
     }
@@ -52,6 +53,7 @@
     &--primary{
         background-color: #ffb700;
         color:#1A162E;
+        white-space: nowrap;
     }
     &--outline{
         background: transparent;
