@@ -33,6 +33,9 @@ html.dark{
       // tag
       --color-tag:#171C28;
       // input 
-      --color-border:#fff
+      --color-border:#fff;
+      // footer
+      --footer-br-color:#171C28;
+       --icon-color-footer: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(331deg) brightness(102%) contrast(101%);
 
 }

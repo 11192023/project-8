@@ -2,6 +2,7 @@
 html{
     --text-color:#1A162E;
     --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2698%) hue-rotate(212deg) brightness(94%) contrast(95%);
+    --icon-color-footer: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(331deg) brightness(102%) contrast(101%);
     --header-br-color:#EEEEEE;
     --color-body:#FFFFFF;
     --Secondary-Color-Secondary-1:#1A162E;
@@ -26,5 +27,24 @@ html{
     --Blue-Blue-hover:#0071DC;
     // navbar-dis
     --color-navbar-dis: #efeded;
+    //  cate-item
+      --br-cate-item:#eeeeee;
+      --br-cate-item-picture:#fff;
+
+
+      // filter
+      --br-filter:#eeeeee;
+      --br-like:#fff;
+      // product card
+      --br-product-card:#FFF;
+      --color-box-shadow-pro-card:0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+      // slider
+      --color-slider:#D2D1D6;
+      // tag
+      --color-tag:#171C28;
+      // input 
+      --color-border:#171C28;
+      // footer
+      --footer-br-color:#eeeeee;
 
 }
