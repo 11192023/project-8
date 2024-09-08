@@ -211,6 +211,11 @@
 }
 .top-act{
      @extend %flexItemsCenter;
+     @include abstracts.screen(md){
+        &__btn{
+        display:none;
+     }
+     }
     &__group{
         @extend %flexItemsCenter;
         justify-content: center;

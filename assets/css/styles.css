@@ -1472,6 +1472,11 @@ html.dark {
   }
 }
 
+@media (max-width: 767.98px) {
+  .top-act__btn {
+    display: none;
+  }
+}
 .top-act__group {
   justify-content: center;
   border-radius: 8px;
