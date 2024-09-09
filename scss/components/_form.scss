@@ -1,0 +1,56 @@
+@use "../abstracts";
+.form{
+    &__group{
+        margin-top:30px;
+    }
+    &__text-input{
+       border-radius: 10px;
+        border: 1px solid var(--Secondary-Color-Secondary-3, #D2D1D6);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    &__input{
+        flex-grow: 1;
+        margin-right:10px;
+        margin-left:10px;
+        height:50px;
+        color: var(--Secondary-Color-Secondary-1, #D2D1D6);
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.44; /* 144.444% */
+        background: transparent;
+        &::placeholder{
+            color: var(--Secondary-Color-Secondary-3, #D2D1D6);
+            font-weight: 400;
+        }
+    }
+    &__input-icon{
+        margin-right:10px;
+    }
+    &__group-inline{
+        display:flex;
+        align-items: center;
+    }
+    &__check-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: auto;
+    }
+    &__checkbox-label{
+        color: var(--Secondary-Color-Secondary-2, #9E9DA8);
+        /* Medium 15 */
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.46; /* 146.667% */
+    }
+    &__group-btn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

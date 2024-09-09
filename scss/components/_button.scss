@@ -42,9 +42,9 @@
     font-weight:500;
     user-select: none;
     white-space: nowrap;
-    + .btn{
-        margin-left:30px;
-    }
+    // + .btn{
+    //     margin-left:30px;
+    // }
     &--text{
         color:#9E9DA8;
         background-color: transparent;
@@ -57,7 +57,7 @@
     }
     &--outline{
         background: transparent;
-        border: solid 1px #fff;
+        border: solid 1px #9E9DA8;
     }
     &[disabled],
     &--disabled{
@@ -70,6 +70,14 @@
     }
     &:hover{
         opacity:0.9;
+    }
+    &-center{
+        margin-top:30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        width:100%;
     }
     
  }
