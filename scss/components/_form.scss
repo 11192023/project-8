@@ -1,7 +1,23 @@
 @use "../abstracts";
 .form{
+    &:has(:invalid) &__submit-btn{
+        opacity:0.5;
+        pointer-events: none;
+    }
     &__group{
         margin-top:30px;
+    }
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)){
+        .form__text-input{
+        border-color: red;
+        background-color: rgba($color:red, $alpha:0.1);
+    }
+    .form__input-icon-error, .form__error{
+        display:block;
+    }
+    .form__input-icon{
+        display:none;
+    }
     }
     &__text-input{
        border-radius: 10px;
@@ -15,7 +31,8 @@
         flex-grow: 1;
         margin-right:10px;
         margin-left:10px;
-        height:50px;
+        // height:50px;
+        height:40px;
         color: var(--Secondary-Color-Secondary-1, #D2D1D6);
         font-size: 1.8rem;
         font-style: normal;
@@ -35,10 +52,42 @@
         align-items: center;
     }
     &__check-box{
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: auto;
+        &::after, &::before{
+            content:"";
+            position: absolute;
+        }
+        &::before{
+            border-radius: 5px;
+            border: solid 2px var(--Secondary-Color-Secondary-3);
+            width:19px;
+            height:19px;
+            left:0;
+        }
+
+    }
+    &__check-box:has(:checked){
+        &::before{
+            background-color: red;
+            border-color: red;
+        }
+        &::after{
+            width:15px;
+            height:5px;
+            border: solid 2px;
+            border-color: transparent transparent #fff #fff;
+            rotate: -45deg;
+            left: 0;
+            top:6px;
+            left:1px;
+        }
+    }
+    &__checkbox-input{
+        display:none;
     }
     &__checkbox-label{
         color: var(--Secondary-Color-Secondary-2, #9E9DA8);
@@ -47,10 +96,25 @@
         font-style: normal;
         font-weight: 500;
         line-height: 1.46; /* 146.667% */
+        margin-left:30px;
     }
     &__group-btn{
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+    &__error{
+        text-align: start;
+        margin-top: 10px;
+        color:red;
+        font-size: 1.4rem;
+        font-weight: 500;
+        display: none;
+    }
+    &__input-icon-error{
+        display:none;
+        margin-left:12px;
+        margin-right:10px;
+        animation: horizontal-shaking 1s;
     }
 }

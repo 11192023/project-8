@@ -1195,6 +1195,23 @@ button, input, textarea, select, a, img {
     display: none;
   }
 }
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 html {
   --text-color:#1A162E;
   --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2698%) hue-rotate(212deg) brightness(94%) contrast(95%);
@@ -2385,8 +2402,22 @@ html.dark {
   width: 100%;
 }
 
+.form:has(:invalid) .form__submit-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .form__group {
   margin-top: 30px;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon-error, .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error {
+  display: block;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon {
+  display: none;
 }
 .form__text-input {
   border-radius: 10px;
@@ -2399,7 +2430,7 @@ html.dark {
   flex-grow: 1;
   margin-right: 10px;
   margin-left: 10px;
-  height: 50px;
+  height: 40px;
   color: var(--Secondary-Color-Secondary-1, #D2D1D6);
   font-size: 1.8rem;
   font-style: normal;
@@ -2419,10 +2450,39 @@ html.dark {
   align-items: center;
 }
 .form__check-box {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: auto;
+}
+.form__check-box::after, .form__check-box::before {
+  content: "";
+  position: absolute;
+}
+.form__check-box::before {
+  border-radius: 5px;
+  border: solid 2px var(--Secondary-Color-Secondary-3);
+  width: 19px;
+  height: 19px;
+  left: 0;
+}
+.form__check-box:has(:checked)::before {
+  background-color: red;
+  border-color: red;
+}
+.form__check-box:has(:checked)::after {
+  width: 15px;
+  height: 5px;
+  border: solid 2px;
+  border-color: transparent transparent #fff #fff;
+  rotate: -45deg;
+  left: 0;
+  top: 6px;
+  left: 1px;
+}
+.form__checkbox-input {
+  display: none;
 }
 .form__checkbox-label {
   color: var(--Secondary-Color-Secondary-2, #9E9DA8);
@@ -2431,11 +2491,26 @@ html.dark {
   font-style: normal;
   font-weight: 500;
   line-height: 1.46; /* 146.667% */
+  margin-left: 30px;
 }
 .form__group-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.form__error {
+  text-align: start;
+  margin-top: 10px;
+  color: red;
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: none;
+}
+.form__input-icon-error {
+  display: none;
+  margin-left: 12px;
+  margin-right: 10px;
+  animation: horizontal-shaking 1s;
 }
 
 .home__container {
@@ -2481,19 +2556,48 @@ html.dark {
   height: 100vh;
 }
 .auth__intro {
+  position: relative;
   background-color: var(--header-br-color);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 30px;
+}
+.auth__intro-img {
+  max-width: 100%;
+}
+.auth__logo {
+  position: absolute;
+  top: 66px;
+  transform: translateX(-50%);
+}
+.auth-btn {
+  position: absolute;
+  bottom: 118px;
 }
 .auth__heading {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 .auth__content {
+  padding: 0 30px;
   flex-grow: 1;
-  padding-top: 50px;
+  padding-top: 20px;
+}
+@media (max-width: 767.98px) {
+  .auth__content {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: #292E39;
+    transition: transform;
+    transition-duration: 1s;
+    overflow-y: auto;
+  }
+  .auth__content.hide {
+    transform: translateX(100%);
+  }
 }
 .auth__content-inner {
   width: min(440px, 100%);
@@ -2519,7 +2623,7 @@ html.dark {
   line-height: 1.46; /* 146.667% */
 }
 .auth__form {
-  margin-top: 60px;
+  margin-top: 30px;
   width: 100%;
 }
 .auth__link {
@@ -2531,7 +2635,7 @@ html.dark {
   line-height: 1.46; /* 146.667% */
 }
 .auth__text {
-  padding-top: 108px;
+  padding-top: 80px;
   display: flex;
   gap: 10px;
   align-items: center;
