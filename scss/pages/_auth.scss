@@ -16,9 +16,15 @@
     }
     }
     &__logo{
-        position:absolute;
-        top: 66px;
-        transform: translateX(-50%);
+        white-space: nowrap;
+        display:none;
+        @include abstracts.screen(md){
+            display:flex;
+            white-space: nowrap;
+            position:absolute;
+            top: 66px;
+            transform: translateX(-50%);
+        }
     }
     &-btn{
         position: absolute;
@@ -89,6 +95,12 @@
         display: flex;
         gap: 10px;
         align-items: center;
+    }
+    &__icon-the-next-page{
+        display:none;
+        @include abstracts.screen(md){
+            display: block;
+        }
     }
 
 }
