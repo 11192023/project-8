@@ -2514,6 +2514,17 @@ html.dark {
   animation: horizontal-shaking 0.3s;
 }
 
+.message {
+  width: 100%;
+  padding: 16px;
+  text-align: start;
+  border-radius: 10px;
+}
+.message__error {
+  border: 1px solid #5bc45f;
+  background: rgba(39, 243, 117, 0.2);
+}
+
 .home__container {
   margin-top: 40px;
 }
@@ -2593,7 +2604,6 @@ html.dark {
 .auth__content {
   padding: 0 30px;
   flex-grow: 1;
-  flex-shrink: 0;
   padding-top: 20px;
 }
 @media (max-width: 767.98px) {
@@ -2663,6 +2673,9 @@ html.dark {
   .auth__logo-sign-in {
     display: none;
   }
+}
+.auth__message {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -37,7 +37,6 @@
     &__content{
         padding: 0 30px;
         flex-grow: 1;
-        flex-shrink: 0;
         padding-top:20px;
         @include abstracts.screen(md){
             position: fixed;
@@ -108,6 +107,9 @@
         @include abstracts.screen(md){
             display:none;
         }
+    }
+    &__message{
+        margin-top:20px;
     }
 
 }
