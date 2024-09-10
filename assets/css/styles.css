@@ -2411,7 +2411,7 @@ html.dark {
   margin-top: 30px;
 }
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
-  border-color: red;
+  border-color: #ff0000;
   background-color: rgba(255, 0, 0, 0.1);
 }
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon-error, .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error {
@@ -2431,7 +2431,7 @@ html.dark {
   flex-grow: 1;
   margin-right: 10px;
   margin-left: 10px;
-  height: 40px;
+  height: 50px;
   color: var(--Secondary-Color-Secondary-1, #D2D1D6);
   font-size: 1.8rem;
   font-style: normal;
@@ -2469,8 +2469,8 @@ html.dark {
   left: 0;
 }
 .form__check-box:has(:checked)::before {
-  background-color: red;
-  border-color: red;
+  background-color: #ff0000;
+  border-color: #ff0000;
 }
 .form__check-box:has(:checked)::after {
   width: 15px;
@@ -2502,7 +2502,7 @@ html.dark {
 .form__error {
   text-align: start;
   margin-top: 10px;
-  color: red;
+  color: #ff0000;
   font-size: 1.4rem;
   font-weight: 500;
   display: none;
@@ -2511,7 +2511,7 @@ html.dark {
   display: none;
   margin-left: 12px;
   margin-right: 10px;
-  animation: horizontal-shaking 1s;
+  animation: horizontal-shaking 0.3s;
 }
 
 .home__container {
@@ -2555,6 +2555,7 @@ html.dark {
 .auth {
   display: flex;
   height: 100vh;
+  min-height: -webkit-fill-available;
 }
 .auth__intro {
   position: relative;
@@ -2592,6 +2593,7 @@ html.dark {
 .auth__content {
   padding: 0 30px;
   flex-grow: 1;
+  flex-shrink: 0;
   padding-top: 20px;
 }
 @media (max-width: 767.98px) {
@@ -2655,6 +2657,11 @@ html.dark {
 @media (max-width: 767.98px) {
   .auth__icon-the-next-page {
     display: block;
+  }
+}
+@media (max-width: 767.98px) {
+  .auth__logo-sign-in {
+    display: none;
   }
 }
 

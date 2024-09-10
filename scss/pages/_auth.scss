@@ -2,6 +2,7 @@
 .auth{
     display:flex;
     height:100vh;
+    min-height:-webkit-fill-available;
     &__intro{
     position:relative;
     background-color: var(--header-br-color);
@@ -36,6 +37,7 @@
     &__content{
         padding: 0 30px;
         flex-grow: 1;
+        flex-shrink: 0;
         padding-top:20px;
         @include abstracts.screen(md){
             position: fixed;
@@ -100,6 +102,11 @@
         display:none;
         @include abstracts.screen(md){
             display: block;
+        }
+    }
+    &__logo-sign-in{
+        @include abstracts.screen(md){
+            display:none;
         }
     }
 

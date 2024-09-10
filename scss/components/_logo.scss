@@ -4,6 +4,9 @@
     align-items: center;
     gap:14px;
     white-space: nowrap;
+    // @include abstracts.screen(md){
+    //     translate: 60%;
+    // }
     &__img{
         width:32px;
         height:32px;
